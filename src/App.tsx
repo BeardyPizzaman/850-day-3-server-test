@@ -9,6 +9,7 @@ import {
   Download,
   Flame,
   LockKeyhole,
+  RotateCcw,
   Save,
   UserRound,
 } from 'lucide-react'
@@ -174,6 +175,24 @@ function App() {
     setShowIntro(false)
   }
 
+  const startNewTest = () => {
+    const confirmed = window.confirm(
+      'Start a new test?\n\nThis will permanently clear every answer saved on this device. Download or print the current record first if you need to keep it.',
+    )
+    if (!confirmed) return
+
+    localStorage.removeItem(STORAGE_KEY)
+    localStorage.removeItem(LEGACY_STORAGE_KEY)
+    localStorage.removeItem(`${STORAGE_KEY}-started`)
+    localStorage.removeItem(`${LEGACY_STORAGE_KEY}-started`)
+    setForm(blankForm())
+    setActiveIndex(0)
+    setSavedAt('')
+    setShowAnswerKey(false)
+    setShowIntro(true)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   const exportRecord = () => {
     const payload = {
       form: '850 Degrees Server Day 3 Test',
@@ -202,7 +221,14 @@ function App() {
           <Logo variant="header" />
           <span><small>SERVER · DAY 3</small></span>
         </button>
-        <div className="save-state"><Save size={15} /> {savedAt ? `Saved ${savedAt}` : 'Saving locally'}</div>
+        <div className="topbar-actions">
+          <div className="save-state"><Save size={15} /> {savedAt ? `Saved ${savedAt}` : 'Saving locally'}</div>
+          <button className="new-test-button" onClick={startNewTest} type="button">
+            <RotateCcw size={15} />
+            <span className="new-test-long">Start New Test</span>
+            <span className="new-test-short">New Test</span>
+          </button>
+        </div>
       </header>
 
       <div className="layout">

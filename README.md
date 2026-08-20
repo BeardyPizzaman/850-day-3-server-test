@@ -10,4 +10,4 @@ A supervised, fillable training assessment for 850 Degrees servers.
 
 ## Records and privacy
 
-Draft responses are saved in the browser on the device being used. The form does not send staff answers to a central database. At the end, the evaluator can print/save a PDF or download a structured response record for the appropriate controlled staff file.
+Draft responses are saved in the browser on the device being used. The form does not send staff answers to a central database. At the end, the evaluator can print/save a PDF or download a structured response record for the appropriate controlled staff file. **Start New Test** clears the saved draft on that device after a confirmation warning.
