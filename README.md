@@ -5,7 +5,7 @@ A supervised, fillable training assessment for 850 Degrees servers.
 ## Source basis
 
 - Food questions: current 850 Degrees online menu, reviewed August 13, 2026.
-- Beverage questions: June 2026 Main Drinks Menu PDF.
+- Beverage questions: August 2026 Main Drinks Menu PDF, reviewed August 20, 2026.
 - Operational flow: historical Day 3 test, Server Training Checklist, Server Standards, and the requested Day 3 sections.
 
 ## Records and privacy

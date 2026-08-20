@@ -13,6 +13,7 @@ import {
   UserRound,
 } from 'lucide-react'
 import { Progress } from '@/components/ui/progress'
+import logoUrl from './assets/850-logo.jpg?inline'
 import {
   allergyCompetencies,
   drinkQuestions,
@@ -52,7 +53,8 @@ type FormState = {
   evaluatorSignDate: string
 }
 
-const STORAGE_KEY = '850-day-3-server-test-v1'
+const STORAGE_KEY = '850-day-3-server-test-v2'
+const LEGACY_STORAGE_KEY = '850-day-3-server-test-v1'
 const today = () => new Date().toISOString().slice(0, 10)
 
 const blankForm = (): FormState => ({
@@ -94,7 +96,7 @@ const sections: Section[] = [
   { id: 'pos', short: 'POS', title: 'POS entry', subtitle: 'Use the training or supervised POS environment. Do not create a chargeable live order for this test.', kind: 'competencies', items: posCompetencies },
   { id: 'running', short: 'Running', title: 'Running food & drinks', subtitle: 'Assess safe, accurate service and table awareness.', kind: 'competencies', items: runningCompetencies },
   { id: 'food', short: 'Food', title: 'Food menu knowledge', subtitle: 'Based on the current 850 Degrees online menu.', kind: 'knowledge', questions: foodQuestions },
-  { id: 'drinks', short: 'Drinks', title: 'Wine & beverage knowledge', subtitle: 'Based on the June 2026 Main Drinks Menu—the beverage source of truth for this test.', kind: 'knowledge', questions: drinkQuestions },
+  { id: 'drinks', short: 'Drinks', title: 'Wine & beverage knowledge', subtitle: 'Based on the August 2026 Main Drinks Menu—the beverage source of truth for this test.', kind: 'knowledge', questions: drinkQuestions },
   { id: 'sellers', short: 'Sellers', title: 'Top sellers & recommendations', subtitle: 'The evaluator supplies today’s actual top sellers and features; the server practises a genuine recommendation.', kind: 'text' },
   { id: 'verbal', short: 'Verbal', title: 'Verbal quiz', subtitle: 'Ask the server to answer aloud as though speaking to a guest.', kind: 'competencies', items: verbalScenarios },
   { id: 'mock', short: 'Mock POS', title: 'Mock POS orders', subtitle: 'Complete each scenario under supervision and verify the ticket before sending.', kind: 'competencies', items: mockOrders },
@@ -109,7 +111,16 @@ function App() {
   const [form, setForm] = useState<FormState>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY)
-      return saved ? { ...blankForm(), ...JSON.parse(saved) } : blankForm()
+      if (saved) return { ...blankForm(), ...JSON.parse(saved) }
+
+      const legacy = localStorage.getItem(LEGACY_STORAGE_KEY)
+      if (!legacy) return blankForm()
+
+      const previous = { ...blankForm(), ...JSON.parse(legacy) } as FormState
+      const retainedAnswers = Object.fromEntries(
+        Object.entries(previous.answers).filter(([id]) => !id.startsWith('drink-')),
+      )
+      return { ...previous, answers: retainedAnswers }
     } catch {
       return blankForm()
     }
@@ -117,7 +128,10 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [savedAt, setSavedAt] = useState('')
   const [showAnswerKey, setShowAnswerKey] = useState(false)
-  const [showIntro, setShowIntro] = useState(() => !localStorage.getItem(`${STORAGE_KEY}-started`))
+  const [showIntro, setShowIntro] = useState(() => (
+    !localStorage.getItem(`${STORAGE_KEY}-started`) &&
+    !localStorage.getItem(`${LEGACY_STORAGE_KEY}-started`)
+  ))
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -163,8 +177,8 @@ function App() {
   const exportRecord = () => {
     const payload = {
       form: '850 Degrees Server Day 3 Test',
-      version: '2026-08-13',
-      menuSources: ['https://www.850degrees.ca/menu/', 'June 2026 Main Drinks Menu.pdf'],
+      version: '2026-08-20',
+      menuSources: ['https://www.850degrees.ca/menu/', 'August 2026 Main Drinks Menu.pdf'],
       score: scored,
       responses: form,
     }
@@ -185,8 +199,8 @@ function App() {
     <div className="app-shell">
       <header className="topbar">
         <button className="brand" onClick={() => go(0)} aria-label="Go to assessment details">
-          <span className="brand-mark"><Flame size={19} strokeWidth={2.4} /></span>
-          <span><strong>850°</strong><small>SERVER · DAY 3</small></span>
+          <Logo variant="header" />
+          <span><small>SERVER · DAY 3</small></span>
         </button>
         <div className="save-state"><Save size={15} /> {savedAt ? `Saved ${savedAt}` : 'Saving locally'}</div>
       </header>
@@ -245,7 +259,7 @@ function Intro({ onStart }: { onStart: () => void }) {
   return (
     <div className="intro-page">
       <div className="intro-card">
-        <div className="intro-mark"><Flame size={28} /><span>850°</span></div>
+        <Logo variant="intro" />
         <p className="eyebrow">TRAINING ASSESSMENT</p>
         <h1>Server Day 3 Test</h1>
         <p className="intro-copy">A supervised readiness check covering the floor, guest service, POS accuracy, current food and drinks knowledge, and one real table from welcome to payment.</p>
@@ -256,9 +270,17 @@ function Intro({ onStart }: { onStart: () => void }) {
         </div>
         <div className="safety-callout"><AlertTriangle size={20} /><p><strong>Supervised assessment</strong><br />The evaluator remains responsible for all guest interactions, allergy decisions, POS entries and payments during this test.</p></div>
         <button className="button primary intro-button" onClick={onStart}>Begin assessment <ArrowRight size={18} /></button>
-        <small className="source-line">Food: current online menu · Beverages: June 2026 Main Drinks Menu</small>
+        <small className="source-line">Food: current online menu · Beverages: August 2026 Main Drinks Menu</small>
       </div>
     </div>
+  )
+}
+
+function Logo({ variant }: { variant: 'header' | 'intro' }) {
+  return (
+    <span className={`logo-crop ${variant}`}>
+      <img src={logoUrl} alt="850 Pizzeria" />
+    </span>
   )
 }
 

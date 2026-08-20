@@ -73,7 +73,7 @@ export const foodQuestions: KnowledgeQuestion[] = [
 ]
 
 export const drinkQuestions: KnowledgeQuestion[] = [
-  { id: 'drink-pinot', prompt: 'Describe the Sue-Ann Staff Pinot Grigio in under ten words.', answer: 'Crisp; green apple, citrus and a clean mineral finish. ABV 11.7%.' },
+  { id: 'drink-pinot', prompt: 'Name and describe the current Pinot Grigio in under ten words.', answer: 'Cantina Kurtatsch 2024: green apple, citrus and clean mineral finish. ABV 13.0%. The August menu describes it as crisp.' },
   { id: 'drink-prosecco', prompt: 'What flavours and finish should a guest expect from Piccini Prosecco?', answer: 'Pear, peach and soft bubbles, with a touch of sweetness. ABV 11.0%.' },
   { id: 'drink-sauv', prompt: 'Which white wine has a flinty mineral finish?', answer: 'Domaine Fleuriet l’Eclat Sauvignon Blanc: citrus, green apple and a flinty mineral finish.' },
   { id: 'drink-rose', prompt: 'Describe Margo Rosé from Two Sisters.', answer: 'Fresh strawberry and citrus with a crisp, dry finish. ABV 13.5%.' },
@@ -82,9 +82,11 @@ export const drinkQuestions: KnowledgeQuestion[] = [
   { id: 'drink-house-beer', prompt: 'Who makes Shoreline Light Lager and FireStone IPA, and what are their ABVs?', answer: 'Something in the Water Brewery. Shoreline Light Lager is 4.0%; FireStone IPA is 4.9%.' },
   { id: 'drink-na', prompt: 'Which beer is non-alcoholic, and who makes it?', answer: 'Gooder NA IPA, made by Elora Brewing Company; 0.0% ABV.' },
   { id: 'drink-cider', prompt: 'Name the cider and its producer.', answer: 'Local Press Cider, Collective Arts Brewing Company; 4.5% ABV.' },
-  { id: 'drink-negroni', prompt: 'What goes into the Negroni?', answer: 'Gin, Campari, sweet red vermouth and an orange slice.' },
-  { id: 'drink-spritz', prompt: 'Name the three Spritzes and their principal liqueur or aperitif.', answer: 'Aperol Spritz — Aperol; Hugo Spritz — St-Germain; Limoncello Spritz — limoncello. Each also includes Prosecco and soda water.' },
-  { id: 'drink-mojito', prompt: 'What is in the Mojito Passion?', answer: 'Rum, pineapple and passion juice.' },
+  { id: 'drink-negroni', prompt: 'What goes into the Negroni, and what serving size is listed?', answer: 'Gin, Campari, sweet red vermouth and an orange slice; listed as 3 oz.' },
+  { id: 'drink-spritz', prompt: 'Name the three 5 oz Spritzes and their principal liqueur or aperitif.', answer: 'Aperol Spritz — Aperol; Hugo Spritz — St-Germain; Limoncello Spritz — limoncello. Each also includes Prosecco and soda water and is listed as 5 oz.' },
+  { id: 'drink-margarita', prompt: 'What does the August menu list for the Mango & Lime Margarita?', answer: 'The menu lists it as made with rum, pineapple and passion juice; 6% ABV, 355 ml, $10.95.' },
+  { id: 'drink-paloma', prompt: 'Describe the Lychee Paloma, including its size and ABV.', answer: 'Grapefruit and zesty lime in an agave cocktail; 6% ABV, 355 ml, $10.95.' },
+  { id: 'drink-old-fashioned', prompt: 'What goes into the Old Fashioned, and what serving size is listed?', answer: 'Whiskey, bitters and sugar with orange zest; listed as 2 oz.' },
 ]
 
 export const verbalScenarios: Competency[] = [
