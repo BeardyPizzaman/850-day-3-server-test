@@ -1,0 +1,162 @@
+[
+  {
+    "number": 1,
+    "prompt": "Which three dips are listed with the Dough Balls?"
+  },
+  {
+    "number": 2,
+    "prompt": "Which cheese and which fruit top the Stracciatella Bruschetta?"
+  },
+  {
+    "number": 3,
+    "prompt": "What type of lettuce and what type of croutons are used in the Caesar Salad?"
+  },
+  {
+    "number": 4,
+    "prompt": "Name the two meats and the mushroom variety on Bloor by the Park."
+  },
+  {
+    "number": 5,
+    "prompt": "Besides ham, cheese and tomato sauce, which three toppings are on Lord Stanley?"
+  },
+  {
+    "number": 6,
+    "prompt": "Describe the Shinny pizza's main topping, cheese and sauce."
+  },
+  {
+    "number": 7,
+    "prompt": "Which two toppings does Superman add to the pepperoni, fior di latte and tomato sauce found on Canuck?"
+  },
+  {
+    "number": 8,
+    "prompt": "Which tomato variety is named for St. John's sauce, and which fresh herb finishes the pizza?"
+  },
+  {
+    "number": 9,
+    "prompt": "For Pasta Di Polpette, name the pasta shape, meat, sauce and finishing cheese."
+  },
+  {
+    "number": 10,
+    "prompt": "What leaf is used for the pesto in Spaghetti al pesto di rucola, and which two cheeses are listed?"
+  },
+  {
+    "number": 11,
+    "prompt": "Which additional protein can be added to Pappardelle Di Funghi, and what is the surcharge?"
+  },
+  {
+    "number": 12,
+    "prompt": "Which seeds and which accompanying bread are listed with the Wild Mushroom Salad?"
+  },
+  {
+    "number": 13,
+    "prompt": "What are the listed prices of the starter Caprese Salad and the main-course Caprese Salad?"
+  },
+  {
+    "number": 14,
+    "prompt": "Which starter costs less, Vegan Meatballs or the beef Meatballs, and by how much?"
+  },
+  {
+    "number": 15,
+    "prompt": "Which two plant-based ingredients are named as the base of our vegan truffle cheese?"
+  },
+  {
+    "number": 16,
+    "prompt": "The tomato sauce story highlights three qualities of San Marzano tomatoes. Name them."
+  },
+  {
+    "number": 17,
+    "prompt": "Which regular pizza has the lowest menu price, and what is that price?"
+  },
+  {
+    "number": 18,
+    "prompt": "Which regular pasta dish has the highest menu price before add-ons, and what is that price?"
+  },
+  {
+    "number": 19,
+    "prompt": "A guest enjoys eggplant, potatoes and a sweet-spicy finish. Which pizza would you recommend?"
+  },
+  {
+    "number": 20,
+    "prompt": "Does the menu say ingredients are always local and Canadian, or locally sourced and Canadian whenever possible?"
+  },
+  {
+    "number": 21,
+    "prompt": "What accompanies the homemade Chocolate Cake?"
+  },
+  {
+    "number": 22,
+    "prompt": "Who makes the gelato, and what is the individual tub size?"
+  },
+  {
+    "number": 23,
+    "prompt": "What are the Tiramisu biscuits soaked in, and what two ingredients cover them?"
+  },
+  {
+    "number": 24,
+    "prompt": "How many cannoli are served per order, and who supplies them?"
+  },
+  {
+    "number": 25,
+    "prompt": "What alternative cannoli shell is available, and does the menu state the exact surcharge?"
+  },
+  {
+    "number": 26,
+    "prompt": "What topping and finishing salt are used on the chocolate Budino?"
+  },
+  {
+    "number": 27,
+    "prompt": "Which type of biscuit is used in the Tiramisu?"
+  },
+  {
+    "number": 28,
+    "prompt": "Which three desserts are priced at $7.95 each?"
+  },
+  {
+    "number": 29,
+    "prompt": "Name the three gelato flavours printed on the dessert menu."
+  },
+  {
+    "number": 30,
+    "prompt": "Which two desserts are priced at $8.95 each?"
+  },
+  {
+    "number": 31,
+    "prompt": "A guest asks for the strongest IPA by alcohol content on our list. Which would you recommend, and what ABV is listed?"
+  },
+  {
+    "number": 32,
+    "prompt": "A guest wants an alcoholic IPA with a lower alcohol content than FireStone. Which listed IPA would you suggest, and what ABV is it?"
+  },
+  {
+    "number": 33,
+    "prompt": "A guest asks for a fuller, structured red wine. Suggest a Cabernet Sauvignon and give two reasons from its menu description."
+  },
+  {
+    "number": 34,
+    "prompt": "A guest asks, \"What is Eleventh Post like?\" Give a short, plain-English description using the wine list."
+  },
+  {
+    "number": 35,
+    "prompt": "A guest likes a white wine with peach and a subtle herbal finish. Which wine would you suggest?"
+  },
+  {
+    "number": 36,
+    "prompt": "A guest enjoys dark beer with chocolate and coffee flavours. Which lager would you suggest?"
+  },
+  {
+    "number": 37,
+    "prompt": "A guest wants a crisp, easy-drinking lager. Which 850 house-branded beer would you suggest?"
+  },
+  {
+    "number": 38,
+    "prompt": "A guest wants a dry rosé with strawberry and citrus notes. Which wine matches?"
+  },
+  {
+    "number": 39,
+    "prompt": "A guest likes Prosecco, mint and lime. Which Spritz would you recommend?"
+  },
+  {
+    "number": 40,
+    "prompt": "A guest wants a fruity soft drink rather than beer or wine. Recommend one named menu option and its flavour or juice type."
+  }
+]
